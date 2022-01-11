@@ -1,0 +1,63 @@
+.btn {
+  /* :link,visted: a 태그에만 사용가능
+    visited: 링크 한번 누르면 보라색으로 되는 것
+    */
+  &:link,
+  &:visited {
+    font-size: 1.6rem;
+    position: relative;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    /* https://www.daleseo.com/css-display-inline-block/ */
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    /* 순서가 .btn::after:hover 여야할거같은데 아냐 */
+    &::after {
+      transform: scale(1.2, 1.4);
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    transform: translateY(-0.25rem);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+
+  /* before, after는 자식으로 들어간다 */
+  &::after {
+    content: '';
+    /* display: 부모랑 똑같아야 함 */
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-black;
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &--animated {
+    animation-name: moveInBottom;
+    animation-duration: 1s;
+    animation-delay: 0.75s;
+    animation-fill-mode: backwards;
+    /* 거꾸로 돌아가는것, 시작점이 0%라고 이해  */
+  }
+}
