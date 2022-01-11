@@ -1,0 +1,41 @@
+body {
+  /* font는 usually inherited, body is parent of all*/
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: $color-dark-grey;
+  padding: 3rem;
+}
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 3rem;
+
+  &--main {
+    /* block: width를 다 차지하므로 자동적으로 띄어쓰기가 된다 */
+    display: block;
+    font-size: 6rem;
+    font-weight: 600;
+    letter-spacing: 6rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+  }
+
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.8rem;
+    /* animation위해 필요한 것 */
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    /* 애니메이션 끝나고 상태유지, both는 둘다, backwards는 처음값으로 돌아감 */
+    animation-fill-mode: forwards;
+  }
+}
