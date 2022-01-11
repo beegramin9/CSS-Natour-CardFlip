@@ -1,0 +1,16 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; /* forcing inherit */
+}
+
+html {
+  // this defines what 1rem is
+  font-size: 62.5%; /* just do this wy */
+}
+
+body {
+  box-sizing: border-box; /* border 기준 */
+}
